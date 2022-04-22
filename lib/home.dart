@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:create_n_share/counter_storage.dart';
+import 'dart:io';
 
 class Home extends StatefulWidget {
   const Home({Key? key, required this.storage}) : super(key: key);
@@ -13,12 +14,12 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int _counter = 0;
 
-  void _incrementCounter() {
+  Future<File> _incrementCounter() async {
     setState(() {
       _counter++;
     });
 
-    widget.storage.writeCounter(_counter);
+    return widget.storage.writeCounter(_counter);
   }
 
   @override
