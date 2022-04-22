@@ -5,7 +5,7 @@ A Flutter project to test functionality.
 ## Task list
 
 - [x] Create a file
-- [] Storage the file
-- [] Load the file
+- [x] Storage the file
+- [x] Load the file
 - [] Share the file
 - [] Load the shared file

@@ -14,6 +14,16 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int _counter = 0;
 
+  @override
+  void initState() {
+    super.initState();
+    widget.storage.readCounter().then((int value) {
+      setState(() {
+        _counter = value;
+      });
+    });
+  }
+
   Future<File> _incrementCounter() async {
     setState(() {
       _counter++;

@@ -19,4 +19,16 @@ class CounterStorage {
 
     return file.writeAsString('$counter');
   }
+
+  Future<int> readCounter() async {
+    try {
+      final file = await _localFile;
+
+      final contents = await file.readAsString();
+
+      return int.parse(contents);
+    } catch (e) {
+      return 0;
+    }
+  }
 }
