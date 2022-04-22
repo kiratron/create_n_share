@@ -1,5 +1,6 @@
-import 'package:create_n_share/home.dart';
 import 'package:flutter/material.dart';
+import 'package:create_n_share/home.dart';
+import 'package:create_n_share/counter_storage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Home(),
+      home: Home(
+        storage: CounterStorage(),
+      ),
     );
   }
 }
