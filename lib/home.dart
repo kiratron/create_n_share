@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:create_n_share/counter_storage.dart';
 import 'dart:io';
+
+import 'package:create_n_share/counter_storage.dart';
+import 'package:create_n_share/appbar_actions.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key, required this.storage}) : super(key: key);
@@ -37,6 +39,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Create and Share files'),
+        actions: AppBarActions.buildActions(),
       ),
       body: Center(
         child: Text('Button tapped $_counter times'),
