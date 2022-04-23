@@ -14,6 +14,11 @@ class CounterStorage {
     return File('$path/counter.txt');
   }
 
+  Future<String> get localFilePath async {
+    final path = await _localPath;
+    return '$path/counter.txt';
+  }
+
   Future<File> writeCounter(int counter) async {
     final file = await _localFile;
 

@@ -39,7 +39,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Create and Share files'),
-        actions: AppBarActions.buildActions(),
+        actions: AppBarActions.buildActions(widget.storage.localFilePath),
       ),
       body: Center(
         child: Text('Button tapped $_counter times'),

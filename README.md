@@ -7,5 +7,5 @@ A Flutter project to test functionality.
 - [x] Create a file
 - [x] Storage the file
 - [x] Load the file
-- [] Share the file
+- [x] Share the file
 - [] Load the shared file
