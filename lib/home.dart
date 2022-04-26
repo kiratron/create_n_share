@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
+import 'package:file_picker/file_picker.dart';
 
 import 'package:create_n_share/counter_storage.dart';
 import 'package:create_n_share/appbar_actions.dart';
@@ -42,7 +43,28 @@ class _HomeState extends State<Home> {
         actions: AppBarActions.buildActions(widget.storage.localFilePath),
       ),
       body: Center(
-        child: Text('Button tapped $_counter times'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Button tapped $_counter times'),
+            OutlinedButton(
+              onPressed: () async {
+                FilePickerResult? result =
+                    await FilePicker.platform.pickFiles();
+                if (result != null) {
+                  File file = File(result.files.single.path!);
+                  await widget.storage.setCounterFromFile(file);
+                  widget.storage.readCounter().then((int value) {
+                    setState(() {
+                      _counter = value;
+                    });
+                  });
+                }
+              },
+              child: const Text('Import a file'),
+            )
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,

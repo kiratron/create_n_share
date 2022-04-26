@@ -36,4 +36,9 @@ class CounterStorage {
       return 0;
     }
   }
+
+  Future<void> setCounterFromFile(File file) async {
+    final path = await _localPath;
+    file.copy('$path/counter.txt');
+  }
 }

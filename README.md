@@ -8,4 +8,6 @@ A Flutter project to test functionality.
 - [x] Storage the file
 - [x] Load the file
 - [x] Share the file
-- [] Load the shared file
+- [x] Load the shared file
+
+Tested only on Android
